@@ -85,7 +85,9 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                   child: const Text('NEXT'),
                   onPressed: () {
-                    // TODO: Show the next page (101)
+                    // Show the next page (101)
+                    // 탐색 스택에서 이 페이지(route)를 pop
+                    Navigator.pop(context);
                   },
                 ),
               ],
