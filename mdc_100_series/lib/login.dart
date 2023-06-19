@@ -22,7 +22,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // TODO: Add text editing controllers (101)
+  // Add text editing controllers (101)
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +46,7 @@ class _LoginPageState extends State<LoginPage> {
             // Add TextField widgets (101)
             // [Name]
             TextField(
+              controller: _usernameController,
               // TextField 위젯의 모양 변경
               decoration: const InputDecoration(
                 // 사용자가 입력란의 탭이나 터치 영역을 쉽게 알아볼 수 있도록 텍스트 입력란의 배경을 채움
@@ -54,12 +58,37 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 12.0),
             // [Password]
             TextField(
+              controller: _passwordController,
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Password',
               ),
               // 사용자가 입력하는 입력값을 적합한 글머리 기호로 자동으로 바꿈
               obscureText: true,
+            ),
+            // Add button bar (101)
+            OverflowBar(
+              alignment: MainAxisAlignment.end,
+              // TODO: Add a beveled rectangular border to CANCEL (103)
+              children: <Widget>[
+                // Add buttons (101)
+                TextButton(
+                  child: const Text('CANCEL'),
+                  onPressed: () {
+                    // Clear the text fields (101)
+                    _usernameController.clear();
+                    _passwordController.clear();
+                  },
+                ),
+                // TODO: Add an elevation to NEXT (103)
+                // TODO: Add a beveled rectangular border to NEXT (103)
+                ElevatedButton(
+                  child: const Text('NEXT'),
+                  onPressed: () {
+                    // TODO: Show the next page (101)
+                  },
+                ),
+              ],
             ),
           ],
         ),

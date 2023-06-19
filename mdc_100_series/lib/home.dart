@@ -29,7 +29,9 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Text('You did it!'),
       ),
-      // TODO: Set resizeToAvoidBottomInset (101)
+      // Set resizeToAvoidBottomInset (101)
+      // 키보드의 모양으로 홈페이지나 홈페이지 위젯의 크기가 변경되지 않도록 설정
+      resizeToAvoidBottomInset: false,
     );
   }
 }
