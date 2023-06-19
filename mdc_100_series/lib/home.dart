@@ -58,9 +58,40 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      // TODO: Add a grid view (102)
-      body: Center(
-        child: Text('You did it!'),
+      // Add a grid view (102)
+      body: GridView.count(
+        crossAxisCount: 2, // 전체 항목 수
+        padding: const EdgeInsets.all(16.0),
+        childAspectRatio: 8.0 / 9.0,
+        // TODO: Build a grid of cards (102)
+        children: [
+          Card(
+            clipBehavior: Clip.antiAlias,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start, // 텍스트를 앞 가장자리에 정렬
+              children: [
+                AspectRatio(
+                  // AspectRatio 위젯은 제공되는 이미지의 종류와 상관없이 이미지의 모양을 결정
+                  aspectRatio: 18.0 / 11.0,
+                  child: Image.asset('assets/diamond.png'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Title'),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
+                      Text('Secondary Text'),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
       ),
       // Set resizeToAvoidBottomInset (101)
       // 키보드의 모양으로 홈페이지나 홈페이지 위젯의 크기가 변경되지 않도록 설정
